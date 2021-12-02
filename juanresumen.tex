@@ -1,0 +1,173 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
+%
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
+
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
+
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
+
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
+
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
+
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
+		
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{6em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
+
+%%% Begin Document
+%%% ------------------------------------------------------------
+
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
+
+\MyName{JUAN LUIS BECQUET MARTÍNEZ}
+%\MySlogan{Indian Institute of Engineering Science and Technology,Shibpur}
+\MySlogan{UdeA Estudiante de Ingenieria de telecomunicaciones}
+
+\sepspace
+
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Detalles Personales}{}
+
+\PersonalEntry{Necimiento}{Marzo 05 1992}
+\PersonalEntry{Dirección}{Necocli Antioquia}
+\PersonalEntry{Celular}{3136648825}
+\PersonalEntry{E-mail}{\url{becmart03@gmail.com}}
+
+
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Educación}{}
+
+\EducationEntry{Estudiante de desarrollo de software }{2021-Actualidad}{MisionTic2022}
+
+\sepspace
+
+\EducationEntry{Estudiante de Ingenieria de Telecomunicaciones }{2019-Actualidad}{UdeA}
+
+
+
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{EXPERIENCIA LABORAL}{}
+
+\WorkEntry{Entrenamiento ETL}{06 Julio 2021- july presente}{Medellin/Antioquia}{Actividades :Pandas, Manejo de ETL's,Google Big Query\\Supervision : Bajo Supervision Christian David Moreno\\acerca : Procesar información de manera automaizada en la nube.}
+\sepspace
+
+\WorkEntry{SIEMPRE.NET S.A.S}{08 Enero 2019,30 junio 2021}{Lider de proyecto}{Actividades : administrador de bases de datos \\bajo la supervision de Deimer nuñez novoa\\acerca : diseño de reportes, apoyo al cliente tanto interno como externo}
+\sepspace
+
+\WorkEntry{SIEMPRE.NET S.A.S}{20 Enero 2016,20 diciembre 2018}{Soporte I.T}{Actividades : Administrador de bases de datos\\bajo la supervision de Deimer nuñez novoa\\acerca : diseño de reportes, apoyo al cliente tanto interno como externo, manejo de bases de datos, limpiado de información}
+\sepspace
+
+\WorkEntry{SIEMPRE.NET}{03 agosto 2013 - 20 diciembre 2016}{Administrador de base de datos}{Actividades : Limpiar datos\\Supervision : John Padilla Montes\\acerca : procesado de datos y administración de bases de datos}
+
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Languages}{español (lengua materna)}
+\SkillsEntry{}{Inglés}{(intermedio)}
+\sepspace
+
+\SkillsEntry{Lenguajes de programación}{\textsc{C}, \textsc{Python},  \textsc{JavaScript}, \textsc{SQL}}
+%\SkillsEntry{}{Python}
+%\SkillsEntry{}{PHP}
+%\SkillsEntry{}{Java}
+%\SkillsEntry{}{VHDL}
+\sepspace
+
+\SkillsEntry{Herramientas}{\textsc{Pandas}, \textsc{Django}, \textsc{Excel}}
+\sepspace
+
+
+%%% References, 
+%%% ------------------------------------------------------------
+\NewPart{actividades extracurriculares}{}
+%Available upon request
+1. Nadar
+\\
+\sepspace
+2. Dibujar
+\end{document}
